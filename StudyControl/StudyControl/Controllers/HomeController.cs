@@ -65,7 +65,7 @@ namespace StudyControl.Controllers
             var course = new Course() { Name = "Математика" };
 
             student.StudentCourses = new List<StudentCourse>();
-            student.StudentCourses.Add(new StudentCourse() { Student = student, Course = course,Grade = 4 });
+            student.StudentCourses.Add(new StudentCourse() { Student = student, Course = course,Grade = "4" });
 
             await _dbContext.AddAsync(course);
             await _dbContext.AddAsync(student);

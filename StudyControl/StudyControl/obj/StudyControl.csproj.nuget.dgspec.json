@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Дмитрий\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj": {}
+    "C:\\Users\\Dmitrii\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Дмитрий\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj": {
+    "C:\\Users\\Dmitrii\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Дмитрий\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj",
+        "projectUniqueName": "C:\\Users\\Dmitrii\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj",
         "projectName": "StudyControl",
-        "projectPath": "C:\\Users\\Дмитрий\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj",
-        "packagesPath": "C:\\Users\\Дмитрий\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Дмитрий\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\obj\\",
+        "projectPath": "C:\\Users\\Dmitrii\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\StudyControl.csproj",
+        "packagesPath": "C:\\Users\\Dmitrii\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dmitrii\\source\\repos\\BladeGTs\\-Performance-monitoring-system\\StudyControl\\StudyControl\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Дмитрий\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dmitrii\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,6 +49,12 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
