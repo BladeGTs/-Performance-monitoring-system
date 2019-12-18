@@ -26,10 +26,30 @@ namespace StudyControl.Controllers
         {
             return View();
         }
-
+        public IActionResult ViewGroup()
+        {
+            var groups = _dbContext.Groups.ToList();
+            return View(groups);
+        }
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult ViewAllStudentsByGroup(int? id)
+        {
+            //Student students = db.Students.Include(r=>r.StudentCourses).FirstOrDefault(a=>a.StudentCourses == id)
+            var students = _dbContext.Students.Include(r => r.Group).Where(cm => cm.GroupId == id).ToList();
+            return View(students);
+        }
+
+        public IActionResult ViewAllCourse(int? id)
+        {
+            var student = _dbContext.Students
+                .Include(s => s.StudentCourses)
+                .ThenInclude(sc => sc.Course)
+                .FirstOrDefault(s => s.Id == id);
+            return View(student);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -41,36 +61,26 @@ namespace StudyControl.Controllers
 
         public async Task<string> Test()
         {
-            var student = new Student() { FirstName = "fn", LastName = "ln" };
+            var student = new Student() { FirstName = "fn", LastName = "ln",GroupId = 1 };
             var course = new Course() { Name = "Математика" };
 
             student.StudentCourses = new List<StudentCourse>();
-            student.StudentCourses.Add(new StudentCourse() { Student = student, Course = course });
+            student.StudentCourses.Add(new StudentCourse() { Student = student, Course = course,Grade = 4 });
 
             await _dbContext.AddAsync(course);
             await _dbContext.AddAsync(student);
 
             await _dbContext.SaveChangesAsync();
 
-            return "hello";
+            return "Done";
         }
 
         public string GetStudentCourses(int id)
         {
-            _dbContext.Students.
-            
+
             var student = _dbContext.Students
                 .Include(r => r.StudentCourses)
-                .FirstOrDefault(s => s.Id == id)
-                .;
-
-
-            var s = _dbContext.Students.FromSql("select *"
-+ " from Students as s"
-+ " left join StudentCourses as sc on s.Id = sc.StudentId"
-+ " left join Courses as c on sc.CourseId"
-+ " where s.Id = " + id);
-
+                .FirstOrDefault(s => s.Id == id);
                 //.Where(s => s.Id == id).Include(s => s.StudentCourses).ThenInclude(s => s.)
 
             //var student = _dbContext.Students.Where(r => r.Id == id).ToList();

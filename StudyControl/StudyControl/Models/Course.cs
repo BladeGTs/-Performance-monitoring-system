@@ -12,7 +12,9 @@ namespace StudyControl.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-
+        public string LecTime { get; set; }
+        public string LabTime { get; set; }
+        public string Practice { get; set; }
         public virtual ICollection<StudentCourse> StudentCourses { get; set; }
     }
 }

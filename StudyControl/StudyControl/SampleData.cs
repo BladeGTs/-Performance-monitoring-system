@@ -45,6 +45,11 @@ namespace StudyControl
                     });
 
             };
+            context.Courses.AddRange(
+                new Course { Name="Математика"},
+                new Course { Name="Физика"},
+                new Course { Name="Программирование"}
+                );
 
 
             context.SaveChanges();

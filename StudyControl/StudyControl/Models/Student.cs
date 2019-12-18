@@ -24,5 +24,13 @@ namespace StudyControl.Models
         public Group Group { get; set; }
 
         public virtual ICollection<StudentCourse> StudentCourses { get; set; }
-}
+        public string FullName
+        {
+            get
+            {
+
+                return FirstName + " " + SecondName + " " + LastName;
+             }
+        }
+    }
 }
